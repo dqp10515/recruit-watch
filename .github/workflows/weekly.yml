@@ -1,0 +1,39 @@
+name: Weekly recruitment watch
+on:
+  schedule:
+    - cron: '21 1 * * 1' # Monday 09:21 Beijing time (UTC+8)
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python monitor.py
+      - name: Notify only on new candidate announcements
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY' > /tmp/new_jobs.md
+          import json
+          a=json.load(open('data/new_items.json'))
+          print('本周官网招聘栏目新增候选公告（需人工核实毕业届别、编制和截止时间）：\n')
+          for x in sorted(a, key=lambda x:(not x.get("priority",False),x.get("title","")))[:30]: print(f'- [{x["title"]}]({x["url"]}) — {x["source"]} ({x.get("match","普通公告")})')
+          if len(a)>30: print(f'\n另有 {len(a)-30} 条，请查看汇总网页。')
+          PY
+          N=$(python -c 'import json;print(len(json.load(open("data/new_items.json"))))')
+          if [ "$N" -gt 0 ]; then
+            gh issue create --title "本周新增招聘公告：$N 条 ($(date +%F))" --body-file /tmp/new_jobs.md
+          fi
+      - name: Commit snapshot and dashboard
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/items.json data/new_items.json data/source_status.json docs/index.html
+          git diff --cached --quiet || (git commit -m "Update recruitment monitor" && git push)
