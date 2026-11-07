@@ -74,3 +74,11 @@ python -m http.server 8000 --directory docs
 本地验证：`python -m unittest discover -s tests -v`。
 
 质检院招聘栏目使用系统 `curl` 读取，兼容其与 Python 不同的 TLS 行为；保持默认的证书验证，不使用 `--insecure`。本地运行该来源需要安装 `curl`（GitHub 的 Ubuntu runner 自带）。
+
+### GitHub 云端访问限制
+
+已实测 GitHub 的 Linux 与 macOS 环境：工信部平台会返回 HTTP 405，信通院返回 412，部分单位连接超时或返回访问防护页面。更换云端操作系统不能保证解决这些限制。没有成功读取时会明确报错，不把已有数据当成本次抓取成功。
+
+可在国内网络手动运行 `python monitor.py --baseline` 补充已有公告；确认 `data/new_items.json` 为空后，将 `data/` 与 `docs/index.html` 提交到仓库。日常使用 `python monitor.py` 可生成本轮新增数据，但本地命令本身不会发送 GitHub Issue。远程状态和本地状态可能不同，应以最近一次运行显示的结果为准。
+
+仓库另提供手动工作流 **Diagnose source connectivity**，同时在不同系统试抓并保存来源状态供排查，不修改正式数据，也不发送通知。

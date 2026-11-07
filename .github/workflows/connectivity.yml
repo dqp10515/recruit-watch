@@ -3,6 +3,8 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+env:
+  PYTHONUTF8: '1'
 jobs:
   probe:
     strategy:
@@ -17,6 +19,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
+      - run: python -c "from pathlib import Path; Path('data/source_status.json').unlink(missing_ok=True)"
       - run: python monitor.py --baseline
       - uses: actions/upload-artifact@v4
         if: always()
