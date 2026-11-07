@@ -3,6 +3,14 @@ on:
   schedule:
     - cron: '21 1 * * 1' # Monday 09:21 Beijing time (UTC+8)
   workflow_dispatch:
+    inputs:
+      baseline:
+        description: '仅更新基线，不发送新增提醒（修复来源后使用）'
+        type: boolean
+        default: false
+concurrency:
+  group: recruitment-snapshot
+  cancel-in-progress: false
 permissions:
   contents: write
   issues: write
@@ -16,7 +24,15 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - run: python monitor.py
+      - name: Collect announcements
+        env:
+          BASELINE: ${{ inputs.baseline || false }}
+        run: |
+          if [ "$BASELINE" = "true" ]; then
+            python monitor.py --baseline
+          else
+            python monitor.py
+          fi
       - name: Notify only on new candidate announcements
         env:
           GH_TOKEN: ${{ github.token }}

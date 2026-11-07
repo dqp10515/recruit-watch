@@ -1,24 +1,245 @@
 [
-  {"name":"工信部所属单位公开招聘平台","group":"工信部","url":"https://www.gxbzhp.org.cn/","kind":"recruitment"},
-  {"name":"赛迪研究院（中国电子信息产业发展研究院）","group":"工信部","url":"https://www.ccidgroup.com/","kind":"homepage","note":"官网首页兜底；页面未必展示全部招聘，请同时关注工信部平台"},
-  {"name":"电子第五研究所（赛宝实验室）","group":"工信部","url":"https://www.ceprei.com/","kind":"homepage","note":"官网首页兜底；工信部平台同步监控"},
-  {"name":"国家工业信息安全发展研究中心","group":"工信部","url":"https://www.cics-cert.org.cn/","kind":"homepage"},
-  {"name":"中国工业互联网研究院","group":"工信部","url":"https://www.china-aii.com/","kind":"homepage"},
-  {"name":"中国电子技术标准化研究院","group":"工信部","url":"https://www.cesi.cn/","kind":"homepage"},
-  {"name":"中国电子学会","group":"工信部","url":"https://www.cie-info.org.cn/","kind":"homepage"},
-  {"name":"中国信息通信研究院","group":"工信部","url":"https://zhaopin.caict.ac.cn/","kind":"homepage"},
-  {"name":"科技部通知公告（覆盖直属单位集中招聘）","group":"科技部","url":"https://www.most.gov.cn/tztg/","kind":"announcements"},
-  {"name":"中国科学技术信息研究所","group":"科技部","url":"https://www.istic.ac.cn/","kind":"homepage"},
-  {"name":"中国科学技术发展战略研究院","group":"科技部","url":"https://www.casted.org.cn/","kind":"homepage"},
-  {"name":"市场监管总局政务公告（集中招聘）","group":"市场监管总局","url":"https://www.samr.gov.cn/zw/index.html","kind":"announcements"},
-  {"name":"中国计量科学研究院招聘","group":"市场监管总局","url":"https://www.nim.ac.cn/taxonomy/term/154","kind":"recruitment"},
-  {"name":"中国标准化研究院：事业编制招聘","group":"市场监管总局","url":"https://www.cnis.ac.cn/rczp/syb/","kind":"recruitment"},
-  {"name":"中国标准化研究院：企业编制招聘","group":"市场监管总局","url":"https://www.cnis.ac.cn/rczp/qyb/","kind":"recruitment"},
-  {"name":"网数中心（网络安全审查认证和市场监管大数据中心）","group":"市场监管总局","url":"https://www.isccc.gov.cn/xxgk1/zxgg/","kind":"announcements"},
-  {"name":"中国合格评定国家认可中心招聘","group":"市场监管总局","url":"https://www.cnas.org.cn/fzlm/cpyc/index.html","kind":"recruitment"},
-  {"name":"中国质量检验检测科学研究院","group":"市场监管总局","url":"https://www.caqit.org.cn/","kind":"homepage"},
-  {"name":"中国科学院文献情报中心招聘","group":"中科院","url":"https://www.las.cas.cn/edu/rczp/","kind":"recruitment"},
-  {"name":"中国科学院电工研究所应届招聘","group":"中科院","url":"https://iee.cas.cn/zp/yjbyszpxx/","kind":"recruitment"},
-  {"name":"中国科学院工业人工智能研究所招聘","group":"中科院","url":"https://iaii.cas.cn/rcdw/rczp/","kind":"recruitment"},
-  {"name":"中国地震局公告","group":"其他中央科研单位","url":"https://www.cea.gov.cn/","kind":"homepage","note":"官网首页兜底，优先人工核对专项招聘"}
+  {
+    "name": "工信部所属单位公开招聘平台",
+    "group": "工信部",
+    "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+    "kind": "recruitment",
+    "link_selector": ".newsList a[href]",
+    "note": "工信部平台招聘公告列表；目前读取列表第一页"
+  },
+  {
+    "name": "赛迪研究院（中国电子信息产业发展研究院）",
+    "group": "工信部",
+    "url": "https://www.ccidgroup.com/zxns.htm",
+    "kind": "content",
+    "note": "官方招贤纳士正文；监测同一网址的招聘内容变化",
+    "content_selector": ".layout_div1_nr",
+    "title_selector": ".layout_div1_nr_tittle",
+    "fallbacks": [
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "kind": "recruitment",
+        "content_selector": null,
+        "title_filter": "中国电子信息产业发展研究院|赛迪",
+        "link_selector": ".newsList a[href]",
+        "fallback_note": "工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告"
+      }
+    ]
+  },
+  {
+    "name": "电子第五研究所（赛宝实验室）",
+    "group": "工信部",
+    "url": "https://www.ceprei.com/",
+    "kind": "homepage",
+    "note": "官网首页仅作补充；未提取到公告时改读工信部平台，覆盖不完整",
+    "fallbacks": [
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "kind": "recruitment",
+        "content_selector": null,
+        "title_filter": "电子第五研究所|电子产品可靠性",
+        "link_selector": ".newsList a[href]",
+        "fallback_note": "工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告"
+      }
+    ]
+  },
+  {
+    "name": "国家工业信息安全发展研究中心",
+    "group": "工信部",
+    "url": "https://www.cics-cert.org.cn/web_root/webpage/zhaopin.html",
+    "kind": "recruitment",
+    "fallbacks": [
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "kind": "recruitment",
+        "content_selector": null,
+        "title_filter": "国家工业信息安全发展研究中心",
+        "link_selector": ".newsList a[href]",
+        "fallback_note": "工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告"
+      }
+    ]
+  },
+  {
+    "name": "中国工业互联网研究院",
+    "group": "工信部",
+    "url": "https://www.china-aii.com/",
+    "kind": "homepage",
+    "fallbacks": [
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "kind": "recruitment",
+        "content_selector": null,
+        "title_filter": "中国工业互联网研究院",
+        "link_selector": ".newsList a[href]",
+        "fallback_note": "工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告"
+      }
+    ],
+    "note": "官网首页仅作补充；未提取到公告时改读工信部平台，覆盖不完整"
+  },
+  {
+    "name": "中国电子技术标准化研究院",
+    "group": "工信部",
+    "url": "https://www.cesi.cn/",
+    "kind": "homepage",
+    "fallbacks": [
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "kind": "recruitment",
+        "content_selector": null,
+        "title_filter": "中国电子技术标准化研究院",
+        "link_selector": ".newsList a[href]",
+        "fallback_note": "工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告"
+      }
+    ],
+    "note": "官网首页仅作补充；未提取到公告时改读工信部平台，覆盖不完整"
+  },
+  {
+    "name": "中国电子学会",
+    "group": "工信部",
+    "url": "https://www.cie.org.cn/about_102/",
+    "kind": "content",
+    "content_selector": ".brief-join-content",
+    "note": "官方加入我们页面；监测招聘正文变化",
+    "fallbacks": [
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "kind": "recruitment",
+        "content_selector": null,
+        "title_filter": "中国电子学会",
+        "link_selector": ".newsList a[href]",
+        "fallback_note": "工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告"
+      }
+    ]
+  },
+  {
+    "name": "中国信息通信研究院",
+    "group": "工信部",
+    "url": "https://www.caict.ac.cn/",
+    "kind": "homepage",
+    "note": "官网存在访问限制时，使用工信部招聘公告筛选信通院；不覆盖其所有招聘",
+    "fallbacks": [
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "kind": "recruitment",
+        "content_selector": null,
+        "title_filter": "中国信息通信研究院",
+        "link_selector": ".newsList a[href]",
+        "fallback_note": "工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告"
+      }
+    ]
+  },
+  {
+    "name": "科技部通知公告（覆盖直属单位集中招聘）",
+    "group": "科技部",
+    "url": "https://www.most.gov.cn/tztg/",
+    "kind": "announcements"
+  },
+  {
+    "name": "中国科学技术信息研究所",
+    "group": "科技部",
+    "url": "https://www.istic.ac.cn/",
+    "kind": "homepage",
+    "fallbacks": [
+      {
+        "url": "https://www.most.gov.cn/tztg/",
+        "kind": "announcements",
+        "title_filter": "中国科学技术信息研究所|中信所",
+        "fallback_note": "科技部通知公告按单位名称筛选，仅覆盖当前列表"
+      }
+    ],
+    "note": "官网无法读取时使用科技部通知公告补充，覆盖不完整"
+  },
+  {
+    "name": "中国科学技术发展战略研究院",
+    "group": "科技部",
+    "url": "http://www.casted.org.cn/p91/tzgg.html",
+    "kind": "announcements",
+    "note": "已核实官方HTTP通知栏目；HTTPS握手失败，HTTP连接未加密"
+  },
+  {
+    "name": "市场监管总局政务公告（集中招聘）",
+    "group": "市场监管总局",
+    "url": "https://www.samr.gov.cn/zw/index.html",
+    "kind": "announcements"
+  },
+  {
+    "name": "中国计量科学研究院招聘",
+    "group": "市场监管总局",
+    "url": "https://www.nim.ac.cn/taxonomy/term/154",
+    "kind": "recruitment"
+  },
+  {
+    "name": "中国标准化研究院：事业编制招聘",
+    "group": "市场监管总局",
+    "url": "https://www.cnis.ac.cn/rczp/syb/",
+    "kind": "recruitment"
+  },
+  {
+    "name": "中国标准化研究院：企业编制招聘",
+    "group": "市场监管总局",
+    "url": "https://www.cnis.ac.cn/rczp/qyb/",
+    "kind": "recruitment"
+  },
+  {
+    "name": "网数中心（网络安全审查认证和市场监管大数据中心）",
+    "group": "市场监管总局",
+    "url": "https://www.isccc.gov.cn/xxgk1/zxgg/",
+    "kind": "announcements"
+  },
+  {
+    "name": "中国合格评定国家认可中心招聘",
+    "group": "市场监管总局",
+    "url": "https://www.cnas.org.cn/fzlm/cpyc/index.html",
+    "kind": "recruitment",
+    "adapter": "cnas",
+    "note": "读取官网公开动态公告接口；包含招聘进度公告",
+    "allowed_hosts": [
+      "www.mohrss.gov.cn"
+    ]
+  },
+  {
+    "name": "中国质量检验检测科学研究院",
+    "group": "市场监管总局",
+    "url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
+    "kind": "recruitment",
+    "note": "已改为官方招聘公告栏目；TLS握手或网络异常会显示失败"
+  },
+  {
+    "name": "中国科学院文献情报中心招聘",
+    "group": "中科院",
+    "url": "https://www.las.cas.cn/edu/rczp/",
+    "kind": "recruitment",
+    "fallbacks": [
+      {
+        "url": "http://www.las.cas.cn/edu/rczp/",
+        "fallback_note": "同一官方招聘栏目HTTP版本；HTTPS证书已过期"
+      }
+    ],
+    "note": "优先HTTPS；证书失效时读取同一官网公开HTTP栏目，连接未加密"
+  },
+  {
+    "name": "中国科学院电工研究所应届招聘",
+    "group": "中科院",
+    "url": "https://iee.cas.cn/zp/yjbyszpxx/",
+    "kind": "recruitment"
+  },
+  {
+    "name": "中国科学院工业人工智能研究所招聘",
+    "group": "中科院",
+    "url": "https://iaii.cas.cn/rcdw/rczp/",
+    "kind": "recruitment"
+  },
+  {
+    "name": "中国地震局公告",
+    "group": "其他中央科研单位",
+    "url": "https://www.cea.gov.cn/cea/zwgk/rsxx/ryzp/index.html",
+    "kind": "recruitment",
+    "note": "中国地震局人员招聘栏目；访问受限时仅以地球物理所招聘栏目补充，不能代表全局",
+    "fallbacks": [
+      {
+        "url": "https://www.cea-igp.ac.cn/rcpy/rcqp/index.html",
+        "fallback_note": "地球物理研究所招聘栏目，仅覆盖该所"
+      }
+    ]
+  }
 ]
