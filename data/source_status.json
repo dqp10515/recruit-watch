@@ -4,30 +4,42 @@
     "group": "工信部",
     "kind": "recruitment",
     "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "ok": true,
-    "found": 15,
-    "health": "ok",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "工信部平台招聘公告列表；目前读取列表第一页",
-    "attempts": [],
+    "attempts": [
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
+      }
+    ],
     "config_hash": "8cf05a253803482a6c2dbba859aa542387c98fd063b776f6329f5269f1c81ebd",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": false,
-    "baseline": true
+    "error": "服务器返回 HTTP 405，未取得公告页面",
+    "baseline": false
   },
   {
     "name": "赛迪研究院（中国电子信息产业发展研究院）",
     "group": "工信部",
     "kind": "content",
     "url": "https://www.ccidgroup.com/zxns.htm",
-    "ok": true,
-    "found": 1,
-    "health": "ok",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "官方招贤纳士正文；监测同一网址的招聘内容变化",
-    "attempts": [],
+    "attempts": [
+      {
+        "url": "https://www.ccidgroup.com/zxns.htm",
+        "error": "连接或读取超时，已有限重试"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
+      }
+    ],
     "config_hash": "f9980893769fdfe399fce2aaaa1b25095134f64fdc40b58e16209b4fe8c83818",
-    "effective_url": "https://www.ccidgroup.com/zxns.htm",
-    "fallback": false,
-    "baseline": true
+    "error": "连接或读取超时，已有限重试；服务器返回 HTTP 405，未取得公告页面",
+    "baseline": false
   },
   {
     "name": "电子第五研究所（赛宝实验室）",
@@ -35,19 +47,22 @@
     "kind": "homepage",
     "url": "https://www.ceprei.com/",
     "ok": true,
-    "found": 3,
+    "found": 0,
     "health": "warning",
     "note": "官网首页仅作补充；未提取到公告时改读工信部平台，覆盖不完整",
     "attempts": [
       {
         "url": "https://www.ceprei.com/",
         "error": "页面可读取，但未提取到匹配公告；尝试备用栏目"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
       }
     ],
     "config_hash": "76617487bc15b14aabf0812ef36392dd7524fe6ba75d7632a694b81b212d4ddf",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
+    "effective_url": "https://www.ceprei.com/",
+    "warning": "页面可读取但未提取到公告，备用来源也不可用；覆盖不完整，不代表没有招聘",
     "baseline": true
   },
   {
@@ -55,21 +70,23 @@
     "group": "工信部",
     "kind": "recruitment",
     "url": "https://www.cics-cert.org.cn/web_root/webpage/zhaopin.html",
-    "ok": true,
-    "found": 1,
-    "health": "warning",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "",
     "attempts": [
       {
         "url": "https://www.cics-cert.org.cn/web_root/webpage/zhaopin.html",
         "error": "HTTPSConnectionPool(host='www.cics-cert.org.cn', port=443): Max retries exceeded with url: /web_root/webpage/zhaopin.html (Caused by ResponseError('too many 504 error responses'))"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
       }
     ],
     "config_hash": "a62e7b6ddd628c18740cb698ec0bbdd7aa13458cf0b27fe9bdd1d7db02520056",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
-    "baseline": true
+    "error": "HTTPSConnectionPool(host='www.cics-cert.org.cn', port=443): Max retries exceeded with url: /web_root/webpage/zhaopin.html (Caused by ResponseError('too many 504 error responses'))；服务器返回 HTTP 405，未取得公告页面",
+    "baseline": false
   },
   {
     "name": "中国工业互联网研究院",
@@ -77,19 +94,22 @@
     "kind": "homepage",
     "url": "https://www.china-aii.com/",
     "ok": true,
-    "found": 2,
+    "found": 0,
     "health": "warning",
     "note": "官网首页仅作补充；未提取到公告时改读工信部平台，覆盖不完整",
     "attempts": [
       {
         "url": "https://www.china-aii.com/",
         "error": "页面可读取，但未提取到匹配公告；尝试备用栏目"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
       }
     ],
     "config_hash": "c3149a69d75465b38cc0a300ddd6add7e099108c580cadeed9d1c643e8c0b199",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
+    "effective_url": "https://www.china-aii.com/",
+    "warning": "页面可读取但未提取到公告，备用来源也不可用；覆盖不完整，不代表没有招聘",
     "baseline": true
   },
   {
@@ -97,21 +117,23 @@
     "group": "工信部",
     "kind": "homepage",
     "url": "https://www.cesi.cn/",
-    "ok": true,
+    "ok": false,
     "found": 0,
-    "health": "warning",
+    "health": "error",
     "note": "官网首页仅作补充；未提取到公告时改读工信部平台，覆盖不完整",
     "attempts": [
       {
         "url": "https://www.cesi.cn/",
         "error": "返回的是访问防护页面，未取得公告内容"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
       }
     ],
     "config_hash": "97ab0b8cf69821c5994e66a019f40038732bdb6ecfd3fad649d7f62a0dafe454",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
-    "baseline": true
+    "error": "返回的是访问防护页面，未取得公告内容；服务器返回 HTTP 405，未取得公告页面",
+    "baseline": false
   },
   {
     "name": "中国电子学会",
@@ -133,21 +155,23 @@
     "group": "工信部",
     "kind": "homepage",
     "url": "https://www.caict.ac.cn/",
-    "ok": true,
-    "found": 1,
-    "health": "warning",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "官网存在访问限制时，使用工信部招聘公告筛选信通院；不覆盖其所有招聘",
     "attempts": [
       {
         "url": "https://www.caict.ac.cn/",
         "error": "服务器返回 HTTP 412，未取得公告页面"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
       }
     ],
     "config_hash": "7ea09f51d0cc2c9f7e25a80e2814f89eb9994ed9e873ea6d561a407dbba634ba",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
-    "baseline": true
+    "error": "服务器返回 HTTP 412，未取得公告页面；服务器返回 HTTP 405，未取得公告页面",
+    "baseline": false
   },
   {
     "name": "科技部通知公告（覆盖直属单位集中招聘）",
@@ -296,15 +320,19 @@
     "group": "市场监管总局",
     "kind": "recruitment",
     "url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
-    "ok": true,
-    "found": 18,
-    "health": "ok",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "官方招聘公告栏目；使用系统curl兼容该站TLS，仍校验证书",
-    "attempts": [],
+    "attempts": [
+      {
+        "url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
+        "error": "系统HTTP客户端失败：curl: (28) Failed to connect to www.caqit.org.cn port 443 after 12001 ms: Timeout was reached\n"
+      }
+    ],
     "config_hash": "1ab12ce8b25b8bfba7f6ba2b768d07fcd57b431ac7b3789ffc55ab9d9b1d537e",
-    "effective_url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
-    "fallback": false,
-    "baseline": true
+    "error": "系统HTTP客户端失败：curl: (28) Failed to connect to www.caqit.org.cn port 443 after 12001 ms: Timeout was reached\n",
+    "baseline": false
   },
   {
     "name": "中国科学院文献情报中心招聘",
@@ -362,14 +390,22 @@
     "group": "其他中央科研单位",
     "kind": "recruitment",
     "url": "https://www.cea.gov.cn/cea/zwgk/rsxx/ryzp/index.html",
-    "ok": true,
-    "found": 12,
-    "health": "ok",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "中国地震局人员招聘栏目；访问受限时仅以地球物理所招聘栏目补充，不能代表全局",
-    "attempts": [],
+    "attempts": [
+      {
+        "url": "https://www.cea.gov.cn/cea/zwgk/rsxx/ryzp/index.html",
+        "error": "服务器返回 HTTP 403，未取得公告页面"
+      },
+      {
+        "url": "https://www.cea-igp.ac.cn/rcpy/rcqp/index.html",
+        "error": "HTTPS证书或TLS握手失败（未关闭证书校验）"
+      }
+    ],
     "config_hash": "7b7a336d4bb2696c2459e1b9a4f40ed461f0951bec8d6bb747b92b046c2cbf7a",
-    "effective_url": "https://www.cea.gov.cn/cea/zwgk/rsxx/ryzp/index.html",
-    "fallback": false,
-    "baseline": true
+    "error": "服务器返回 HTTP 403，未取得公告页面；HTTPS证书或TLS握手失败（未关闭证书校验）",
+    "baseline": false
   }
 ]
