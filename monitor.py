@@ -167,10 +167,12 @@ def scan(source, session, cache):
     config = json.dumps(source, sort_keys=True, ensure_ascii=False)
     status['config_hash'] = hashlib.sha256(config.encode()).hexdigest()
     endpoints = [source, *[{**source, **fallback} for fallback in source.get('fallbacks', [])]]
+    readable_url = None
     for index, endpoint in enumerate(endpoints):
         try:
             candidates = extract(endpoint, session, cache)
             if not candidates and index < len(endpoints) - 1:
+                readable_url = endpoint['url']
                 raise FetchError('页面可读取，但未提取到匹配公告；尝试备用栏目')
             status.update(ok=True, found=len(candidates), effective_url=endpoint['url'],
                           health='warning' if index or not candidates or endpoint['kind'] == 'homepage' else 'ok',
@@ -188,7 +190,11 @@ def scan(source, session, cache):
         except Exception as exc:
             status['attempts'].append(dict(url=endpoint['url'], error=error_message(exc)))
             print(f"WARNING {source['name']}: {endpoint['url']}: {exc}", file=sys.stderr)
-    status['error'] = '；'.join(a['error'] for a in status['attempts'])
+    if readable_url:
+        status.update(ok=True, health='warning', effective_url=readable_url,
+                      warning='页面可读取但未提取到公告，备用来源也不可用；覆盖不完整，不代表没有招聘')
+    else:
+        status['error'] = '；'.join(a['error'] for a in status['attempts'])
     return [], status
 
 

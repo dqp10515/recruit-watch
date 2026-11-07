@@ -87,6 +87,14 @@ class MonitorTests(unittest.TestCase):
         self.assertNotIn('-k', command)
         self.assertIn('--max-time', command)
 
+    def test_readable_homepage_is_not_misreported_when_fallback_fails(self):
+        session = Mock()
+        session.get.side_effect = [response('<title>官网</title>'), requests.Timeout()]
+        _, status = monitor.scan({**self.source, 'fallbacks': [dict(url='https://example.org/alternate')]}, session, {})
+        self.assertTrue(status['ok'])
+        self.assertEqual(status['health'], 'warning')
+        self.assertEqual(len(status['attempts']), 2)
+
 
 if __name__ == '__main__':
     unittest.main()
