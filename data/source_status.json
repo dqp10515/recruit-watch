@@ -1,0 +1,186 @@
+[
+  {
+    "name": "工信部所属单位公开招聘平台",
+    "group": "工信部",
+    "kind": "recruitment",
+    "url": "https://www.gxbzhp.org.cn/",
+    "ok": false,
+    "found": 0,
+    "error": "405 Client Error: Not Allowed for url: https://www.gxbzhp.org.cn/"
+  },
+  {
+    "name": "赛迪研究院（中国电子信息产业发展研究院）",
+    "group": "工信部",
+    "kind": "homepage",
+    "url": "https://www.ccidgroup.com/",
+    "ok": false,
+    "found": 0,
+    "error": "HTTPSConnectionPool(host='www.ccidgroup.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.ccidgroup.com', port=443) at 0x7"
+  },
+  {
+    "name": "电子第五研究所（赛宝实验室）",
+    "group": "工信部",
+    "kind": "homepage",
+    "url": "https://www.ceprei.com/",
+    "ok": true,
+    "found": 0
+  },
+  {
+    "name": "国家工业信息安全发展研究中心",
+    "group": "工信部",
+    "kind": "homepage",
+    "url": "https://www.cics-cert.org.cn/",
+    "ok": true,
+    "found": 0
+  },
+  {
+    "name": "中国工业互联网研究院",
+    "group": "工信部",
+    "kind": "homepage",
+    "url": "https://www.china-aii.com/",
+    "ok": true,
+    "found": 0
+  },
+  {
+    "name": "中国电子技术标准化研究院",
+    "group": "工信部",
+    "kind": "homepage",
+    "url": "https://www.cesi.cn/",
+    "ok": true,
+    "found": 0
+  },
+  {
+    "name": "中国电子学会",
+    "group": "工信部",
+    "kind": "homepage",
+    "url": "https://www.cie-info.org.cn/",
+    "ok": false,
+    "found": 0,
+    "error": "HTTPSConnectionPool(host='www.cie-info.org.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cie-info.org.cn', port=443) at"
+  },
+  {
+    "name": "中国信息通信研究院",
+    "group": "工信部",
+    "kind": "homepage",
+    "url": "https://zhaopin.caict.ac.cn/",
+    "ok": false,
+    "found": 0,
+    "error": "HTTPSConnectionPool(host='zhaopin.caict.ac.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='zhaopin.caict.ac.cn', port=443) at"
+  },
+  {
+    "name": "科技部通知公告（覆盖直属单位集中招聘）",
+    "group": "科技部",
+    "kind": "announcements",
+    "url": "https://www.most.gov.cn/tztg/",
+    "ok": true,
+    "found": 11
+  },
+  {
+    "name": "中国科学技术信息研究所",
+    "group": "科技部",
+    "kind": "homepage",
+    "url": "https://www.istic.ac.cn/",
+    "ok": true,
+    "found": 0
+  },
+  {
+    "name": "中国科学技术发展战略研究院",
+    "group": "科技部",
+    "kind": "homepage",
+    "url": "https://www.casted.org.cn/",
+    "ok": false,
+    "found": 0,
+    "error": "HTTPSConnectionPool(host='www.casted.org.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.casted.org.cn', port=443) at 0x7"
+  },
+  {
+    "name": "市场监管总局政务公告（集中招聘）",
+    "group": "市场监管总局",
+    "kind": "announcements",
+    "url": "https://www.samr.gov.cn/zw/index.html",
+    "ok": true,
+    "found": 0
+  },
+  {
+    "name": "中国计量科学研究院招聘",
+    "group": "市场监管总局",
+    "kind": "recruitment",
+    "url": "https://www.nim.ac.cn/taxonomy/term/154",
+    "ok": true,
+    "found": 4
+  },
+  {
+    "name": "中国标准化研究院：事业编制招聘",
+    "group": "市场监管总局",
+    "kind": "recruitment",
+    "url": "https://www.cnis.ac.cn/rczp/syb/",
+    "ok": true,
+    "found": 19
+  },
+  {
+    "name": "中国标准化研究院：企业编制招聘",
+    "group": "市场监管总局",
+    "kind": "recruitment",
+    "url": "https://www.cnis.ac.cn/rczp/qyb/",
+    "ok": true,
+    "found": 21
+  },
+  {
+    "name": "网数中心（网络安全审查认证和市场监管大数据中心）",
+    "group": "市场监管总局",
+    "kind": "announcements",
+    "url": "https://www.isccc.gov.cn/xxgk1/zxgg/",
+    "ok": true,
+    "found": 2
+  },
+  {
+    "name": "中国合格评定国家认可中心招聘",
+    "group": "市场监管总局",
+    "kind": "recruitment",
+    "url": "https://www.cnas.org.cn/fzlm/cpyc/index.html",
+    "ok": true,
+    "found": 0
+  },
+  {
+    "name": "中国质量检验检测科学研究院",
+    "group": "市场监管总局",
+    "kind": "homepage",
+    "url": "https://www.caqit.org.cn/",
+    "ok": false,
+    "found": 0,
+    "error": "HTTPSConnectionPool(host='www.caqit.org.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.caqit.org.cn', port=443) at 0x7f9"
+  },
+  {
+    "name": "中国科学院文献情报中心招聘",
+    "group": "中科院",
+    "kind": "recruitment",
+    "url": "https://www.las.cas.cn/edu/rczp/",
+    "ok": false,
+    "found": 0,
+    "error": "HTTPSConnectionPool(host='www.las.cas.cn', port=443): Max retries exceeded with url: /edu/rczp/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] ce"
+  },
+  {
+    "name": "中国科学院电工研究所应届招聘",
+    "group": "中科院",
+    "kind": "recruitment",
+    "url": "https://iee.cas.cn/zp/yjbyszpxx/",
+    "ok": true,
+    "found": 2
+  },
+  {
+    "name": "中国科学院工业人工智能研究所招聘",
+    "group": "中科院",
+    "kind": "recruitment",
+    "url": "https://iaii.cas.cn/rcdw/rczp/",
+    "ok": true,
+    "found": 5
+  },
+  {
+    "name": "中国地震局公告",
+    "group": "其他中央科研单位",
+    "kind": "homepage",
+    "url": "https://www.cea.gov.cn/",
+    "ok": false,
+    "found": 0,
+    "error": "403 Client Error: Forbidden for url: https://www.cea.gov.cn/"
+  }
+]
