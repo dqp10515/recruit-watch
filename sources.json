@@ -159,8 +159,9 @@
   {
     "name": "市场监管总局政务公告（集中招聘）",
     "group": "市场监管总局",
-    "url": "https://www.samr.gov.cn/zw/index.html",
-    "kind": "announcements"
+    "url": "https://www.samr.gov.cn/zw/zjwj/gsgg/index.html",
+    "kind": "announcements",
+    "note": "已改为公示公告栏目；如动态列表未读取或没有匹配公告，会标记需注意"
   },
   {
     "name": "中国计量科学研究院招聘",
@@ -202,7 +203,8 @@
     "group": "市场监管总局",
     "url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
     "kind": "recruitment",
-    "note": "已改为官方招聘公告栏目；TLS握手或网络异常会显示失败"
+    "note": "官方招聘公告栏目；使用系统curl兼容该站TLS，仍校验证书",
+    "transport": "curl"
   },
   {
     "name": "中国科学院文献情报中心招聘",

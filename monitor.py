@@ -7,6 +7,7 @@ import datetime as dt
 import html
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, urldefrag
@@ -57,16 +58,32 @@ def error_message(exc):
     return str(exc)[:500]
 
 
-def fetch(session, url, cache, **kwargs):
+def fetch(session, url, cache, transport='requests', **kwargs):
     # Reuse shared official fallback pages without requesting them for each unit.
-    key = (url, json.dumps(kwargs, sort_keys=True, ensure_ascii=False))
+    key = (url, transport, json.dumps(kwargs, sort_keys=True, ensure_ascii=False))
     if key in cache:
         result = cache[key]
         if isinstance(result, Exception):
             raise result
         return result
     try:
-        response = session.get(url, headers=HEADERS, timeout=(12, 30), **kwargs)
+        if transport == 'curl':
+            # Some legacy TLS servers work with system curl but fail with Python's TLS stack.
+            # curl retains its default certificate verification; no insecure flags are used.
+            result = subprocess.run(
+                ['curl', '--silent', '--show-error', '--location', '--connect-timeout', '12',
+                 '--max-time', '40', '--proto', '=http,https', '--proto-redir', '=http,https',
+                 '--write-out', '\n%{url_effective}\n%{http_code}', '--url', url],
+                capture_output=True, timeout=45)
+            if result.returncode:
+                raise FetchError('系统HTTP客户端失败：' + result.stderr.decode(errors='replace')[:300])
+            body, final_url, code = result.stdout.rsplit(b'\n', 2)
+            response = requests.Response()
+            response._content = body
+            response.url = final_url.decode()
+            response.status_code = int(code)
+        else:
+            response = session.get(url, headers=HEADERS, timeout=(12, 30), **kwargs)
         response.raise_for_status()
         if not response.encoding or response.encoding.lower() in ('iso-8859-1', 'ascii'):
             response.encoding = response.apparent_encoding or 'utf-8'
@@ -92,13 +109,13 @@ def item_record(source, title, target, context=''):
 
 def extract(source, session, cache=None):
     cache = {} if cache is None else cache
-    response = fetch(session, source['url'], cache)
+    response = fetch(session, source['url'], cache, transport=source.get('transport', 'requests'))
     soup = BeautifulSoup(response.text, 'html.parser')
-    # CNAS publishes its list through the same public GET endpoint used by its page.
-    if source.get('adapter') == 'cnas':
-        script = soup.select_one('script[querydata][url]')
+    # Public government CMS lists use the same GET endpoint as their own page.
+    script = soup.select_one('script[querydata][url]')
+    if script is not None or source.get('adapter') == 'cnas':
         if script is None:
-            raise FetchError('认可中心动态列表结构已变化，需要检查接口')
+            raise FetchError('动态列表结构已变化，需要检查接口')
         endpoint = urljoin(response.url, script['url'])
         if urlparse(endpoint).netloc != urlparse(response.url).netloc:
             raise FetchError('动态列表接口不是同源地址，停止读取')
@@ -106,7 +123,7 @@ def extract(source, session, cache=None):
         payload = fetch(session, endpoint, cache, params=params).json()
         fragment = payload.get('data', {}).get('html')
         if not payload.get('success') or not isinstance(fragment, str):
-            raise FetchError('认可中心公告接口未返回有效列表')
+            raise FetchError('公告接口未返回有效列表')
         soup = BeautifulSoup(fragment, 'html.parser')
     for node in soup(['script', 'style', 'noscript', 'nav', 'footer']):
         node.decompose()

@@ -24,6 +24,8 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
+      - name: Verify collectors
+        run: python -m unittest discover -s tests -v
       - name: Collect announcements
         env:
           BASELINE: ${{ inputs.baseline || false }}

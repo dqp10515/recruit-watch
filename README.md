@@ -72,3 +72,5 @@ python -m http.server 8000 --directory docs
 当前只读取配置栏目当前页（不自动翻页），部分单位以主管部门平台作为备用。网页的黄色和红色来源仍需人工检查。
 
 本地验证：`python -m unittest discover -s tests -v`。
+
+质检院招聘栏目使用系统 `curl` 读取，兼容其与 Python 不同的 TLS 行为；保持默认的证书验证，不使用 `--insecure`。本地运行该来源需要安装 `curl`（GitHub 的 Ubuntu runner 自带）。

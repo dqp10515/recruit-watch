@@ -75,6 +75,18 @@ class MonitorTests(unittest.TestCase):
         self.assertEqual(status['health'], 'warning')
         self.assertIn('不代表没有招聘', monitor.page([], [status], 'now'))
 
+    def test_curl_transport_retains_certificate_verification(self):
+        from unittest.mock import patch
+        body = '<a href="/one">测试单位2027年公开招聘公告</a>'.encode()
+        result = Mock(returncode=0, stdout=body + b'\nhttps://example.org/jobs\n200')
+        with patch('monitor.subprocess.run', return_value=result) as run:
+            items = monitor.extract({**self.source, 'transport': 'curl'}, Mock())
+        self.assertEqual(len(items), 1)
+        command = run.call_args.args[0]
+        self.assertNotIn('--insecure', command)
+        self.assertNotIn('-k', command)
+        self.assertIn('--max-time', command)
+
 
 if __name__ == '__main__':
     unittest.main()
