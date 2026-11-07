@@ -222,9 +222,10 @@ def merge_items(known, candidates, now, baseline):
 
 
 def needs_baseline(previous, current, first_run=False):
-    return (first_run or not previous.get('ok')
-            or previous.get('config_hash') != current['config_hash']
-            or previous.get('effective_url') != current.get('effective_url'))
+    successful = previous.get('last_success') or (previous if previous.get('ok') and previous.get('found', 1) else {})
+    return (first_run or not successful
+            or successful.get('config_hash') != current['config_hash']
+            or successful.get('effective_url') != current.get('effective_url'))
 
 
 def page(items, statuses, scanned):
@@ -284,6 +285,12 @@ def main():
             # Recovery, a new URL, or a newly available fallback must not flood old notices.
             baseline = needs_baseline(previous, s, first_run)
             s['baseline'] = bool(baseline and s['ok'])
+            if candidates:
+                s['last_success'] = dict(config_hash=s['config_hash'], effective_url=s['effective_url'], at=now)
+            elif previous.get('last_success'):
+                s['last_success'] = previous['last_success']
+            elif previous.get('ok') and previous.get('found'):
+                s['last_success'] = {k: previous[k] for k in ('config_hash', 'effective_url') if k in previous}
             new.extend(merge_items(known, candidates, now, baseline))
             print(f"{source['name']}: {len(candidates)} links; {s['health']}; baseline={baseline}", flush=True)
             status.append(s)

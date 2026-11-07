@@ -65,7 +65,7 @@ python -m http.server 8000 --directory docs
 - 已适配认可中心的公开动态公告接口；赛迪和电子学会招聘直接写在正文中，因此按正文内容摘要监测变化，同一网址更新也能提醒。
 - 文献情报中心 HTTPS 证书失效、战略院 HTTPS 连接异常时，使用已经核实可访问的官方 HTTP 公开栏目；HTTP 连接未加密，不关闭 HTTPS 证书校验。
 - 网络错误和 HTTP 429/5xx 最多重试一次；不绕过验证码或访问防护。工信部统一列表在一轮内复用，避免按单位重复请求。
-- 新增或变更来源、失败来源恢复、主备来源切换时，先为该来源补建基线，避免把过去的公告集中推送。临时恢复当天真正新增的公告也可能随基线一起被静默收录，可在网页查看。
+- 首次读到来源、变更来源配置或切换到未经建基线的入口时，先补建基线。已成功抓取的来源会保留成功记录，后续云端失败不会抹去本机基线，恢复后继续提醒新增链接。首次建基线当天的新增公告也可能被静默收录，可在网页查看。
 
 修复或大范围调整来源后，在 `Actions → Weekly recruitment watch → Run workflow` 勾选 **baseline**，只补充基线、不创建 Issue。日常运行保持不勾选；每周定时任务自动按日常模式执行。
 
@@ -82,3 +82,20 @@ python -m http.server 8000 --directory docs
 可在国内网络手动运行 `python monitor.py --baseline` 补充已有公告；确认 `data/new_items.json` 为空后，将 `data/` 与 `docs/index.html` 提交到仓库。日常使用 `python monitor.py` 可生成本轮新增数据，但本地命令本身不会发送 GitHub Issue。远程状态和本地状态可能不同，应以最近一次运行显示的结果为准。
 
 仓库另提供手动工作流 **Diagnose source connectivity**，同时在不同系统试抓并保存来源状态供排查，不修改正式数据，也不发送通知。
+
+
+## 七、这台 Mac 的每周补抓
+
+已启用用户级 LaunchAgent `com.dqp10515.recruit-watch`，每周一北京时间 **10:21** 补抓，比云端晚一小时。需要用户已登录、电脑开机联网；不会主动唤醒关机的电脑。休眠期间错过的日历任务可在唤醒后补执行。
+
+- 使用 `~/Library/Application Support/RecruitWatch/repo` 中的专用克隆，不在日常开发目录里自动提交。
+- 启动器为 `scripts/local_watch.py`，首次运行自动建立基线；之后推送快照，并直接通过 GitHub CLI 创建新增提醒 Issue。没有新增不创建 Issue，用户身份的推送自动触发 Pages 发布。
+- 使用已授权 GitHub CLI/系统钥匙串，不在脚本、仓库或定时任务里保存密码或令牌。本机 GitHub 连接使用现有的 `127.0.0.1:7890` 代理，抓取官网使用本机网络。
+- 通知失败时，待发数据保留在专用目录的 `state/outbox` 中，下次重试；Issue 中的批次标记用于避免重试重复发送。
+- 日志：`~/Library/Logs/RecruitWatch/stdout.log` 与 `stderr.log`。任务冲突和 Git 合并冲突会停止并记录错误，不覆盖工作文件。
+
+查看任务：`launchctl print gui/$(id -u)/com.dqp10515.recruit-watch`。
+
+手动运行一次：`launchctl kickstart gui/$(id -u)/com.dqp10515.recruit-watch`。
+
+停止任务：`launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.dqp10515.recruit-watch.plist`。

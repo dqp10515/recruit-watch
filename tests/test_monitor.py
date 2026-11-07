@@ -66,6 +66,10 @@ class MonitorTests(unittest.TestCase):
         self.assertTrue(monitor.needs_baseline({**current, 'config_hash': 'old'}, current))
         self.assertTrue(monitor.needs_baseline({**current, 'effective_url': 'other'}, current))
         self.assertTrue(monitor.needs_baseline(current, current, True))
+        # A failed cloud run must not erase the successful local collector baseline.
+        failed_cloud = dict(ok=False, last_success=current)
+        self.assertFalse(monitor.needs_baseline(failed_cloud, current))
+        self.assertTrue(monitor.needs_baseline(failed_cloud, {**current, 'config_hash': 'changed'}))
 
     def test_empty_list_and_homepage_are_warnings(self):
         session = Mock()
