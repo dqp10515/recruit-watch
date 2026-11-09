@@ -1705,5 +1705,27 @@
     "match": "普通公告",
     "priority": false,
     "first_seen": "2026-11-07 13:19 UTC"
+  },
+  {
+    "title": "国家工业信息安全发展研究中心2025年暑期实习生招聘公告",
+    "url": "https://www.cics-cert.org.cn/web_root/webpage/articlecontent_106003_1933049217886982146.html",
+    "source": "国家工业信息安全发展研究中心",
+    "group": "工信部",
+    "published": "2025-06-01",
+    "kind": "招聘公告",
+    "match": "专业匹配关键词",
+    "priority": true,
+    "first_seen": "2026-11-09 07:59 UTC"
+  },
+  {
+    "title": "国家工业信息安全发展研究中心 2025年度公开招聘高校毕业生公告",
+    "url": "https://www.cics-cert.org.cn/web_root/webpage/articlecontent_106003_1891324310123974658.html",
+    "source": "国家工业信息安全发展研究中心",
+    "group": "工信部",
+    "published": "2025-02-01",
+    "kind": "招聘公告",
+    "match": "专业匹配关键词",
+    "priority": true,
+    "first_seen": "2026-11-09 07:59 UTC"
   }
 ]

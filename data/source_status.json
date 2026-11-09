@@ -4,15 +4,19 @@
     "group": "工信部",
     "kind": "recruitment",
     "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "ok": true,
-    "found": 15,
-    "health": "ok",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "工信部平台招聘公告列表；目前读取列表第一页",
-    "attempts": [],
+    "attempts": [
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
+      }
+    ],
     "config_hash": "8cf05a253803482a6c2dbba859aa542387c98fd063b776f6329f5269f1c81ebd",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": false,
-    "baseline": true,
+    "error": "服务器返回 HTTP 405，未取得公告页面",
+    "baseline": false,
     "last_success": {
       "config_hash": "8cf05a253803482a6c2dbba859aa542387c98fd063b776f6329f5269f1c81ebd",
       "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
@@ -24,15 +28,23 @@
     "group": "工信部",
     "kind": "content",
     "url": "https://www.ccidgroup.com/zxns.htm",
-    "ok": true,
-    "found": 1,
-    "health": "ok",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "官方招贤纳士正文；监测同一网址的招聘内容变化",
-    "attempts": [],
+    "attempts": [
+      {
+        "url": "https://www.ccidgroup.com/zxns.htm",
+        "error": "连接或读取超时，已有限重试"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
+      }
+    ],
     "config_hash": "f9980893769fdfe399fce2aaaa1b25095134f64fdc40b58e16209b4fe8c83818",
-    "effective_url": "https://www.ccidgroup.com/zxns.htm",
-    "fallback": false,
-    "baseline": true,
+    "error": "连接或读取超时，已有限重试；服务器返回 HTTP 405，未取得公告页面",
+    "baseline": false,
     "last_success": {
       "config_hash": "f9980893769fdfe399fce2aaaa1b25095134f64fdc40b58e16209b4fe8c83818",
       "effective_url": "https://www.ccidgroup.com/zxns.htm",
@@ -45,19 +57,22 @@
     "kind": "homepage",
     "url": "https://www.ceprei.com/",
     "ok": true,
-    "found": 3,
+    "found": 0,
     "health": "warning",
     "note": "官网首页仅作补充；未提取到公告时改读工信部平台，覆盖不完整",
     "attempts": [
       {
         "url": "https://www.ceprei.com/",
         "error": "页面可读取，但未提取到匹配公告；尝试备用栏目"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
       }
     ],
     "config_hash": "76617487bc15b14aabf0812ef36392dd7524fe6ba75d7632a694b81b212d4ddf",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
+    "effective_url": "https://www.ceprei.com/",
+    "warning": "页面可读取但未提取到公告，备用来源也不可用；覆盖不完整，不代表没有招聘",
     "baseline": true,
     "last_success": {
       "config_hash": "76617487bc15b14aabf0812ef36392dd7524fe6ba75d7632a694b81b212d4ddf",
@@ -71,24 +86,18 @@
     "kind": "recruitment",
     "url": "https://www.cics-cert.org.cn/web_root/webpage/zhaopin.html",
     "ok": true,
-    "found": 1,
-    "health": "warning",
+    "found": 2,
+    "health": "ok",
     "note": "",
-    "attempts": [
-      {
-        "url": "https://www.cics-cert.org.cn/web_root/webpage/zhaopin.html",
-        "error": "HTTPSConnectionPool(host='www.cics-cert.org.cn', port=443): Max retries exceeded with url: /web_root/webpage/zhaopin.html (Caused by ResponseError('too many 504 error responses'))"
-      }
-    ],
+    "attempts": [],
     "config_hash": "a62e7b6ddd628c18740cb698ec0bbdd7aa13458cf0b27fe9bdd1d7db02520056",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
+    "effective_url": "https://www.cics-cert.org.cn/web_root/webpage/zhaopin.html",
+    "fallback": false,
     "baseline": true,
     "last_success": {
       "config_hash": "a62e7b6ddd628c18740cb698ec0bbdd7aa13458cf0b27fe9bdd1d7db02520056",
-      "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-      "at": "2026-11-07 13:43 UTC"
+      "effective_url": "https://www.cics-cert.org.cn/web_root/webpage/zhaopin.html",
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -97,19 +106,22 @@
     "kind": "homepage",
     "url": "https://www.china-aii.com/",
     "ok": true,
-    "found": 2,
+    "found": 0,
     "health": "warning",
     "note": "官网首页仅作补充；未提取到公告时改读工信部平台，覆盖不完整",
     "attempts": [
       {
         "url": "https://www.china-aii.com/",
         "error": "页面可读取，但未提取到匹配公告；尝试备用栏目"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
       }
     ],
     "config_hash": "c3149a69d75465b38cc0a300ddd6add7e099108c580cadeed9d1c643e8c0b199",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
+    "effective_url": "https://www.china-aii.com/",
+    "warning": "页面可读取但未提取到公告，备用来源也不可用；覆盖不完整，不代表没有招聘",
     "baseline": true,
     "last_success": {
       "config_hash": "c3149a69d75465b38cc0a300ddd6add7e099108c580cadeed9d1c643e8c0b199",
@@ -122,21 +134,23 @@
     "group": "工信部",
     "kind": "homepage",
     "url": "https://www.cesi.cn/",
-    "ok": true,
+    "ok": false,
     "found": 0,
-    "health": "warning",
+    "health": "error",
     "note": "官网首页仅作补充；未提取到公告时改读工信部平台，覆盖不完整",
     "attempts": [
       {
         "url": "https://www.cesi.cn/",
-        "error": "返回的是访问防护页面，未取得公告内容"
+        "error": "连接失败：域名解析、网络线路或服务器不可达"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
       }
     ],
     "config_hash": "97ab0b8cf69821c5994e66a019f40038732bdb6ecfd3fad649d7f62a0dafe454",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
-    "baseline": true
+    "error": "连接失败：域名解析、网络线路或服务器不可达；服务器返回 HTTP 405，未取得公告页面",
+    "baseline": false
   },
   {
     "name": "中国电子学会",
@@ -151,11 +165,11 @@
     "config_hash": "9a7735f32616504625fd844c80d4840809ab5b53a42285a27f5f62da548fa7a2",
     "effective_url": "https://www.cie.org.cn/about_102/",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "9a7735f32616504625fd844c80d4840809ab5b53a42285a27f5f62da548fa7a2",
       "effective_url": "https://www.cie.org.cn/about_102/",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -163,21 +177,23 @@
     "group": "工信部",
     "kind": "homepage",
     "url": "https://www.caict.ac.cn/",
-    "ok": true,
-    "found": 1,
-    "health": "warning",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "官网存在访问限制时，使用工信部招聘公告筛选信通院；不覆盖其所有招聘",
     "attempts": [
       {
         "url": "https://www.caict.ac.cn/",
         "error": "服务器返回 HTTP 412，未取得公告页面"
+      },
+      {
+        "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
+        "error": "服务器返回 HTTP 405，未取得公告页面"
       }
     ],
     "config_hash": "7ea09f51d0cc2c9f7e25a80e2814f89eb9994ed9e873ea6d561a407dbba634ba",
-    "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
-    "fallback": true,
-    "warning": "仅备用来源可用，覆盖不完整：工信部统一招聘平台按单位名称筛选，仅覆盖该平台第一页公告",
-    "baseline": true,
+    "error": "服务器返回 HTTP 412，未取得公告页面；服务器返回 HTTP 405，未取得公告页面",
+    "baseline": false,
     "last_success": {
       "config_hash": "7ea09f51d0cc2c9f7e25a80e2814f89eb9994ed9e873ea6d561a407dbba634ba",
       "effective_url": "https://www.gxbzhp.org.cn/index/zpgg.html",
@@ -197,11 +213,11 @@
     "config_hash": "6a1e96f5b7e71311a594a556287ee5a13db9ef080ac028ad7c1f1090d0c80a1b",
     "effective_url": "https://www.most.gov.cn/tztg/",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "6a1e96f5b7e71311a594a556287ee5a13db9ef080ac028ad7c1f1090d0c80a1b",
       "effective_url": "https://www.most.gov.cn/tztg/",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -223,11 +239,11 @@
     "effective_url": "https://www.most.gov.cn/tztg/",
     "fallback": true,
     "warning": "仅备用来源可用，覆盖不完整：科技部通知公告按单位名称筛选，仅覆盖当前列表",
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "ab9f2926216a43d743d835aa2cb66c616e1f7e084bb36096cca12ba9eb7edb95",
       "effective_url": "https://www.most.gov.cn/tztg/",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -244,11 +260,11 @@
     "effective_url": "http://www.casted.org.cn/p91/tzgg.html",
     "fallback": false,
     "warning": "使用官方HTTP公开栏目，连接未加密",
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "3ae3a0befd0b1877a5992f28b17460c403df459f08844f2531c031150dd95c6a",
       "effective_url": "http://www.casted.org.cn/p91/tzgg.html",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -264,11 +280,11 @@
     "config_hash": "c84f7087ba4b136a2151d015ab82e4794145442d7f085d240effdbeec408077e",
     "effective_url": "https://www.samr.gov.cn/zw/zjwj/gsgg/index.html",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "c84f7087ba4b136a2151d015ab82e4794145442d7f085d240effdbeec408077e",
       "effective_url": "https://www.samr.gov.cn/zw/zjwj/gsgg/index.html",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -284,11 +300,11 @@
     "config_hash": "00e1b3b83447b4dd0a3053cfbfcbe6fc9a20bc2d65c9d570975d0069f3116b4d",
     "effective_url": "https://www.nim.ac.cn/taxonomy/term/154",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "00e1b3b83447b4dd0a3053cfbfcbe6fc9a20bc2d65c9d570975d0069f3116b4d",
       "effective_url": "https://www.nim.ac.cn/taxonomy/term/154",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -304,11 +320,11 @@
     "config_hash": "643254fb1d24145d900c46636e031f05c0cd340a13914fa0354462cda6dd87ca",
     "effective_url": "https://www.cnis.ac.cn/rczp/syb/",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "643254fb1d24145d900c46636e031f05c0cd340a13914fa0354462cda6dd87ca",
       "effective_url": "https://www.cnis.ac.cn/rczp/syb/",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -324,11 +340,11 @@
     "config_hash": "c0b812a4339f5d17d525b31b9a56a132bbebc7a0124ac3de74bd9a46f38c1269",
     "effective_url": "https://www.cnis.ac.cn/rczp/qyb/",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "c0b812a4339f5d17d525b31b9a56a132bbebc7a0124ac3de74bd9a46f38c1269",
       "effective_url": "https://www.cnis.ac.cn/rczp/qyb/",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -344,11 +360,11 @@
     "config_hash": "fe82affaf96efe2dc8ac288a282f7e6e967da87861982be1f3c711e75f4addb7",
     "effective_url": "https://www.isccc.gov.cn/xxgk1/zxgg/",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "fe82affaf96efe2dc8ac288a282f7e6e967da87861982be1f3c711e75f4addb7",
       "effective_url": "https://www.isccc.gov.cn/xxgk1/zxgg/",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -364,11 +380,11 @@
     "config_hash": "c90ca4a78104507117c4912f0165a1b4bca25699852e9b01b13ffb27a32aac48",
     "effective_url": "https://www.cnas.org.cn/fzlm/cpyc/index.html",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "c90ca4a78104507117c4912f0165a1b4bca25699852e9b01b13ffb27a32aac48",
       "effective_url": "https://www.cnas.org.cn/fzlm/cpyc/index.html",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -376,15 +392,19 @@
     "group": "市场监管总局",
     "kind": "recruitment",
     "url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
-    "ok": true,
-    "found": 18,
-    "health": "ok",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "官方招聘公告栏目；使用系统curl兼容该站TLS，仍校验证书",
-    "attempts": [],
+    "attempts": [
+      {
+        "url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
+        "error": "系统HTTP客户端失败：curl: (28) Failed to connect to www.caqit.org.cn port 443 after 12001 ms: Timeout was reached\n"
+      }
+    ],
     "config_hash": "1ab12ce8b25b8bfba7f6ba2b768d07fcd57b431ac7b3789ffc55ab9d9b1d537e",
-    "effective_url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
-    "fallback": false,
-    "baseline": true,
+    "error": "系统HTTP客户端失败：curl: (28) Failed to connect to www.caqit.org.cn port 443 after 12001 ms: Timeout was reached\n",
+    "baseline": false,
     "last_success": {
       "config_hash": "1ab12ce8b25b8bfba7f6ba2b768d07fcd57b431ac7b3789ffc55ab9d9b1d537e",
       "effective_url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
@@ -410,11 +430,11 @@
     "effective_url": "http://www.las.cas.cn/edu/rczp/",
     "fallback": true,
     "warning": "仅备用来源可用，覆盖不完整：同一官方招聘栏目HTTP版本；HTTPS证书已过期；使用官方HTTP公开栏目，连接未加密",
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "4a164d430a29a0d97f2da15c1b07756e895614ceb1fcf392084e97b41fb0d8b6",
       "effective_url": "http://www.las.cas.cn/edu/rczp/",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -430,11 +450,11 @@
     "config_hash": "761f315e180095e2fcf09c919f5b49c05b21d3d9903aae179e74b2a431685584",
     "effective_url": "https://iee.cas.cn/zp/yjbyszpxx/",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "761f315e180095e2fcf09c919f5b49c05b21d3d9903aae179e74b2a431685584",
       "effective_url": "https://iee.cas.cn/zp/yjbyszpxx/",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -450,11 +470,11 @@
     "config_hash": "a89f8a00b230aba71eb5199dbf268cb63e2ae8063a05f288b04b43c1a2eb132d",
     "effective_url": "https://iaii.cas.cn/rcdw/rczp/",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "a89f8a00b230aba71eb5199dbf268cb63e2ae8063a05f288b04b43c1a2eb132d",
       "effective_url": "https://iaii.cas.cn/rcdw/rczp/",
-      "at": "2026-11-07 13:43 UTC"
+      "at": "2026-11-09 07:59 UTC"
     }
   },
   {
@@ -462,15 +482,23 @@
     "group": "其他中央科研单位",
     "kind": "recruitment",
     "url": "https://www.cea.gov.cn/cea/zwgk/rsxx/ryzp/index.html",
-    "ok": true,
-    "found": 12,
-    "health": "ok",
+    "ok": false,
+    "found": 0,
+    "health": "error",
     "note": "中国地震局人员招聘栏目；访问受限时仅以地球物理所招聘栏目补充，不能代表全局",
-    "attempts": [],
+    "attempts": [
+      {
+        "url": "https://www.cea.gov.cn/cea/zwgk/rsxx/ryzp/index.html",
+        "error": "服务器返回 HTTP 403，未取得公告页面"
+      },
+      {
+        "url": "https://www.cea-igp.ac.cn/rcpy/rcqp/index.html",
+        "error": "HTTPS证书或TLS握手失败（未关闭证书校验）"
+      }
+    ],
     "config_hash": "7b7a336d4bb2696c2459e1b9a4f40ed461f0951bec8d6bb747b92b046c2cbf7a",
-    "effective_url": "https://www.cea.gov.cn/cea/zwgk/rsxx/ryzp/index.html",
-    "fallback": false,
-    "baseline": true,
+    "error": "服务器返回 HTTP 403，未取得公告页面；HTTPS证书或TLS握手失败（未关闭证书校验）",
+    "baseline": false,
     "last_success": {
       "config_hash": "7b7a336d4bb2696c2459e1b9a4f40ed461f0951bec8d6bb747b92b046c2cbf7a",
       "effective_url": "https://www.cea.gov.cn/cea/zwgk/rsxx/ryzp/index.html",
