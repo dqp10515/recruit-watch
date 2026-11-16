@@ -93,11 +93,11 @@
     "config_hash": "a62e7b6ddd628c18740cb698ec0bbdd7aa13458cf0b27fe9bdd1d7db02520056",
     "effective_url": "https://www.cics-cert.org.cn/web_root/webpage/zhaopin.html",
     "fallback": false,
-    "baseline": true,
+    "baseline": false,
     "last_success": {
       "config_hash": "a62e7b6ddd628c18740cb698ec0bbdd7aa13458cf0b27fe9bdd1d7db02520056",
       "effective_url": "https://www.cics-cert.org.cn/web_root/webpage/zhaopin.html",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -141,7 +141,7 @@
     "attempts": [
       {
         "url": "https://www.cesi.cn/",
-        "error": "连接失败：域名解析、网络线路或服务器不可达"
+        "error": "返回的是访问防护页面，未取得公告内容"
       },
       {
         "url": "https://www.gxbzhp.org.cn/index/zpgg.html",
@@ -149,7 +149,7 @@
       }
     ],
     "config_hash": "97ab0b8cf69821c5994e66a019f40038732bdb6ecfd3fad649d7f62a0dafe454",
-    "error": "连接失败：域名解析、网络线路或服务器不可达；服务器返回 HTTP 405，未取得公告页面",
+    "error": "返回的是访问防护页面，未取得公告内容；服务器返回 HTTP 405，未取得公告页面",
     "baseline": false
   },
   {
@@ -169,7 +169,7 @@
     "last_success": {
       "config_hash": "9a7735f32616504625fd844c80d4840809ab5b53a42285a27f5f62da548fa7a2",
       "effective_url": "https://www.cie.org.cn/about_102/",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -217,7 +217,7 @@
     "last_success": {
       "config_hash": "6a1e96f5b7e71311a594a556287ee5a13db9ef080ac028ad7c1f1090d0c80a1b",
       "effective_url": "https://www.most.gov.cn/tztg/",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -226,7 +226,7 @@
     "kind": "homepage",
     "url": "https://www.istic.ac.cn/",
     "ok": true,
-    "found": 1,
+    "found": 2,
     "health": "warning",
     "note": "官网无法读取时使用科技部通知公告补充，覆盖不完整",
     "attempts": [
@@ -243,7 +243,7 @@
     "last_success": {
       "config_hash": "ab9f2926216a43d743d835aa2cb66c616e1f7e084bb36096cca12ba9eb7edb95",
       "effective_url": "https://www.most.gov.cn/tztg/",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -264,7 +264,7 @@
     "last_success": {
       "config_hash": "3ae3a0befd0b1877a5992f28b17460c403df459f08844f2531c031150dd95c6a",
       "effective_url": "http://www.casted.org.cn/p91/tzgg.html",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -273,7 +273,7 @@
     "kind": "announcements",
     "url": "https://www.samr.gov.cn/zw/zjwj/gsgg/index.html",
     "ok": true,
-    "found": 2,
+    "found": 1,
     "health": "ok",
     "note": "已改为公示公告栏目；如动态列表未读取或没有匹配公告，会标记需注意",
     "attempts": [],
@@ -284,7 +284,7 @@
     "last_success": {
       "config_hash": "c84f7087ba4b136a2151d015ab82e4794145442d7f085d240effdbeec408077e",
       "effective_url": "https://www.samr.gov.cn/zw/zjwj/gsgg/index.html",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -304,7 +304,7 @@
     "last_success": {
       "config_hash": "00e1b3b83447b4dd0a3053cfbfcbe6fc9a20bc2d65c9d570975d0069f3116b4d",
       "effective_url": "https://www.nim.ac.cn/taxonomy/term/154",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -324,7 +324,7 @@
     "last_success": {
       "config_hash": "643254fb1d24145d900c46636e031f05c0cd340a13914fa0354462cda6dd87ca",
       "effective_url": "https://www.cnis.ac.cn/rczp/syb/",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -344,7 +344,7 @@
     "last_success": {
       "config_hash": "c0b812a4339f5d17d525b31b9a56a132bbebc7a0124ac3de74bd9a46f38c1269",
       "effective_url": "https://www.cnis.ac.cn/rczp/qyb/",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -364,7 +364,7 @@
     "last_success": {
       "config_hash": "fe82affaf96efe2dc8ac288a282f7e6e967da87861982be1f3c711e75f4addb7",
       "effective_url": "https://www.isccc.gov.cn/xxgk1/zxgg/",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -384,7 +384,7 @@
     "last_success": {
       "config_hash": "c90ca4a78104507117c4912f0165a1b4bca25699852e9b01b13ffb27a32aac48",
       "effective_url": "https://www.cnas.org.cn/fzlm/cpyc/index.html",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -399,11 +399,11 @@
     "attempts": [
       {
         "url": "https://www.caqit.org.cn/zpxx/zpgg/index.shtml",
-        "error": "系统HTTP客户端失败：curl: (28) Failed to connect to www.caqit.org.cn port 443 after 12001 ms: Timeout was reached\n"
+        "error": "系统HTTP客户端失败：curl: (28) Connection timed out after 12002 milliseconds\n"
       }
     ],
     "config_hash": "1ab12ce8b25b8bfba7f6ba2b768d07fcd57b431ac7b3789ffc55ab9d9b1d537e",
-    "error": "系统HTTP客户端失败：curl: (28) Failed to connect to www.caqit.org.cn port 443 after 12001 ms: Timeout was reached\n",
+    "error": "系统HTTP客户端失败：curl: (28) Connection timed out after 12002 milliseconds\n",
     "baseline": false,
     "last_success": {
       "config_hash": "1ab12ce8b25b8bfba7f6ba2b768d07fcd57b431ac7b3789ffc55ab9d9b1d537e",
@@ -434,7 +434,7 @@
     "last_success": {
       "config_hash": "4a164d430a29a0d97f2da15c1b07756e895614ceb1fcf392084e97b41fb0d8b6",
       "effective_url": "http://www.las.cas.cn/edu/rczp/",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -454,7 +454,7 @@
     "last_success": {
       "config_hash": "761f315e180095e2fcf09c919f5b49c05b21d3d9903aae179e74b2a431685584",
       "effective_url": "https://iee.cas.cn/zp/yjbyszpxx/",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {
@@ -463,7 +463,7 @@
     "kind": "recruitment",
     "url": "https://iaii.cas.cn/rcdw/rczp/",
     "ok": true,
-    "found": 5,
+    "found": 7,
     "health": "ok",
     "note": "",
     "attempts": [],
@@ -474,7 +474,7 @@
     "last_success": {
       "config_hash": "a89f8a00b230aba71eb5199dbf268cb63e2ae8063a05f288b04b43c1a2eb132d",
       "effective_url": "https://iaii.cas.cn/rcdw/rczp/",
-      "at": "2026-11-09 07:59 UTC"
+      "at": "2026-11-16 08:00 UTC"
     }
   },
   {

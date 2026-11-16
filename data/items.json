@@ -1727,5 +1727,71 @@
     "match": "专业匹配关键词",
     "priority": true,
     "first_seen": "2026-11-09 07:59 UTC"
+  },
+  {
+    "title": "科技部直属事业单位（中国科学技术信息研究所）2026年度面向社会公开招聘工作人员公告",
+    "url": "https://www.most.gov.cn/tztg/202611/t20261109_197686.html",
+    "source": "科技部通知公告（覆盖直属单位集中招聘）",
+    "group": "科技部",
+    "published": "2026-11-09",
+    "kind": "招聘公告",
+    "match": "普通公告",
+    "priority": false,
+    "first_seen": "2026-11-16 08:00 UTC"
+  },
+  {
+    "title": "中国科学院文献情报中心项目管理岗位工作人员招聘启事",
+    "url": "http://www.las.cas.cn/edu/rczp/202611/t20261114_8309221.html",
+    "source": "中国科学院文献情报中心招聘",
+    "group": "中科院",
+    "published": "2026-11-01",
+    "kind": "招聘公告",
+    "match": "普通公告",
+    "priority": false,
+    "first_seen": "2026-11-16 08:00 UTC"
+  },
+  {
+    "title": "中国科学院文献情报中心劳务派遣工作人员招聘启事",
+    "url": "http://www.las.cas.cn/edu/rczp/202611/t20261113_8309145.html",
+    "source": "中国科学院文献情报中心招聘",
+    "group": "中科院",
+    "published": "2026-11-01",
+    "kind": "招聘公告",
+    "match": "普通公告",
+    "priority": false,
+    "first_seen": "2026-11-16 08:00 UTC"
+  },
+  {
+    "title": "中国科学院文献情报中心智能情报支撑战略决策重点实验室劳务派遣人员招聘启事",
+    "url": "http://www.las.cas.cn/edu/rczp/202611/t20261113_8308872.html",
+    "source": "中国科学院文献情报中心招聘",
+    "group": "中科院",
+    "published": "2026-11-01",
+    "kind": "招聘公告",
+    "match": "普通公告",
+    "priority": false,
+    "first_seen": "2026-11-16 08:00 UTC"
+  },
+  {
+    "title": "中国科学院工业人工智能研究所战略规划与政策研究岗招聘公告",
+    "url": "https://iaii.cas.cn/rcdw/rczp/202611/t20261112_8308776.html",
+    "source": "中国科学院工业人工智能研究所招聘",
+    "group": "中科院",
+    "published": "2026-11-01",
+    "kind": "招聘公告",
+    "match": "专业匹配关键词",
+    "priority": true,
+    "first_seen": "2026-11-16 08:00 UTC"
+  },
+  {
+    "title": "中国科学院工业人工智能研究所质量体系管理岗招聘公告",
+    "url": "https://iaii.cas.cn/rcdw/rczp/202611/t20261110_8307887.html",
+    "source": "中国科学院工业人工智能研究所招聘",
+    "group": "中科院",
+    "published": "2026-11-01",
+    "kind": "招聘公告",
+    "match": "专业匹配关键词",
+    "priority": true,
+    "first_seen": "2026-11-16 08:00 UTC"
   }
 ]
