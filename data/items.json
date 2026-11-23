@@ -1793,5 +1793,16 @@
     "match": "专业匹配关键词",
     "priority": true,
     "first_seen": "2026-11-16 08:00 UTC"
+  },
+  {
+    "title": "市场监管总局直属事业单位2026年度第三批公开招聘公告",
+    "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/rss/art/2026/art_9b5ef7a72c26429ea8a1dc3237f14b28.html",
+    "source": "市场监管总局政务公告（集中招聘）",
+    "group": "市场监管总局",
+    "published": "",
+    "kind": "招聘公告",
+    "match": "普通公告",
+    "priority": false,
+    "first_seen": "2026-11-23 09:08 UTC"
   }
 ]
